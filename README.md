@@ -7,7 +7,7 @@ Landing page one-page de atendimento veterinário domiciliar para cães e gatos 
 - Perfis: [@anaflavia.veterinaria](https://www.instagram.com/anaflavia.veterinaria) no rodapé; assinatura de [@maferrsantos](https://www.instagram.com/maferrsantos/)
 - Animações: GSAP 3.13 + ScrollTrigger via CDN, respeitando `prefers-reduced-motion`
 - Hospedagem: Vercel (site estático, sem build)
-- URL provisória nas meta tags: https://ana-flavia-vet.vercel.app (trocar pelo domínio final)
+- No ar em https://anaflaviavet.vercel.app · repositório `mariafernanda2109-create/anafl-viaveterin-ria`, deploy automático a cada push na `main`
 
 ## Estrutura
 
@@ -36,7 +36,7 @@ Linguagem traduzida da referência "Happy Tails Pet Care & Veterinary" (estrutur
 
 1. **Resolução do retrato.** `sobre-ana-flavia` já é a foto real da Ana Flávia, mas o original enviado tem 512x519, e o recorte 4:5 ficou em 415x519. A moldura chega a 448x560 no desktop, então a imagem é usada com 1,08x de ampliação e fica visivelmente macia em tela retina. Pedir o arquivo original da câmera e reexportar em 896x1120
 2. **Testar o link no celular.** O número é `+55 43 99681-1409`, confirmado pela cliente em 18/09/2026 (antes estava sem o nono dígito). Abrir o site publicado e conferir se o WhatsApp encontra o contato
-3. **Domínio final.** Trocar `ana-flavia-vet.vercel.app` em `canonical`, `og:url`, `og:image` e nos dois JSON-LD
+3. **Domínio próprio.** Hoje o site usa o subdomínio da Vercel, `anaflaviavet.vercel.app`, já refletido em `canonical`, `og:url`, `og:image` e no JSON-LD. Se a cliente registrar um domínio, trocar nesses cinco pontos e apontar o DNS na Vercel
 4. **Nome completo e ano de formação.** A página usa "Ana Flávia" e "Medicina Veterinária - UEL". Acrescentar sobrenome e ano de conclusão, se ela quiser
 5. **Área de atendimento.** A seção "Área de atendimento" foi removida a pedido da cliente. A cidade continua no schema, no rodapé e na tarja do cabeçalho; as fotos `area-casa` e `area-pet` continuam em `assets/img/` sem uso, e podem ser apagadas
 6. **Horário de atendimento.** Não informado, então ficou fora da página e do schema. Se houver horário fixo, incluir nos dois
