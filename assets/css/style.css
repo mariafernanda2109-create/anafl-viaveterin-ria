@@ -441,7 +441,11 @@ strong { font-weight: var(--peso-extra); }
   isolation: isolate;
   overflow: hidden;
   display: flex;
+  /* a secao precisa caber inteira na carga: 100svh e a altura util com a
+     barra do navegador aberta. O min() preserva o desenho em telas altas,
+     e o valor em rem sozinho atende quem nao suporta svh. */
   min-height: 46rem;
+  min-height: min(46rem, 100svh);
   background-color: var(--cor-verde);
   color: var(--cor-branco);
 }
@@ -1014,7 +1018,7 @@ strong { font-weight: var(--peso-extra); }
    TABLET · 48rem (768px)
    ========================================= */
 @media (min-width: 48rem) {
-  .hero { min-height: 48rem; }
+  .hero { min-height: 48rem; min-height: min(48rem, 100svh); }
 
   .diferenciais_grade { grid-template-columns: repeat(2, 1fr); }
   .diferenciais_card_largo { grid-column: 1 / -1; min-height: 17rem; }
@@ -1071,7 +1075,7 @@ strong { font-weight: var(--peso-extra); }
   .cabecalho_links { flex-direction: row; gap: var(--esp-1); margin-inline: auto; }
   .cabecalho_link { padding-inline: var(--esp-3); font-size: var(--texto-sm); }
 
-  .hero { min-height: 52rem; }
+  .hero { min-height: 52rem; min-height: min(52rem, 100svh); }
   /* a partir de 64rem entra a foto larga: os bichos ficam a direita, o vazio verde fica sob o texto */
   .hero_imagem { object-position: 100% 50%; }
   .hero_fundo::after {
@@ -1117,4 +1121,5 @@ strong { font-weight: var(--peso-extra); }
 }
 
 @media (min-width: 90rem) {
-  .hero { min-height: 56rem; }}
+  .hero { min-height: 56rem; min-height: min(56rem, 100svh); }
+}
