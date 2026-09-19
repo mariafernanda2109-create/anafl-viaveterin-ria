@@ -38,7 +38,7 @@ Linguagem traduzida da referência "Happy Tails Pet Care & Veterinary" (estrutur
 2. **Testar o link no celular.** O número é `+55 43 99681-1409`, confirmado pela cliente em 18/09/2026 (antes estava sem o nono dígito). Abrir o site publicado e conferir se o WhatsApp encontra o contato
 3. **Domínio próprio.** Hoje o site usa o subdomínio da Vercel, `anaflaviavet.vercel.app`, já refletido em `canonical`, `og:url`, `og:image` e no JSON-LD. Se a cliente registrar um domínio, trocar nesses cinco pontos e apontar o DNS na Vercel
 4. **Nome completo e ano de formação.** A página usa "Ana Flávia" e "Medicina Veterinária - UEL". Acrescentar sobrenome e ano de conclusão, se ela quiser
-5. **Área de atendimento.** A seção "Área de atendimento" foi removida a pedido da cliente. A cidade continua no schema, no rodapé e na tarja do cabeçalho; as fotos `area-casa` e `area-pet` continuam em `assets/img/` sem uso, e podem ser apagadas
+5. **Área de atendimento.** A seção "Área de atendimento" foi removida a pedido da cliente. A cidade continua no schema, no rodapé e na tarja do cabeçalho. As fotos `area-casa` e `area-pet` saíram de `assets/img/` em 18/09/2026 e seguem recuperáveis no commit `1d20425`
 6. **Horário de atendimento.** Não informado, então ficou fora da página e do schema. Se houver horário fixo, incluir nos dois
 
 ## Créditos das fotos
@@ -55,8 +55,6 @@ Fotos do [Pexels](https://www.pexels.com/license/), licença livre para uso come
 | `processo-agenda` | [5255523](https://www.pexels.com/photo/5255523/) |
 | `processo-visita` | [6235654](https://www.pexels.com/photo/6235654/) |
 | `sobre-ana-flavia` | imagem enviada pela cliente |
-| `area-casa` | [39040811](https://www.pexels.com/photo/39040811/) (sem uso, ver pendência 5) |
-| `area-pet` | [7801145](https://www.pexels.com/photo/7801145/) (sem uso, ver pendência 5) |
 | `agendar-pet` | [26756562](https://www.pexels.com/photo/26756562/) |
 | `marca-casa` (gif e png) | animação enviada pela cliente |
 
