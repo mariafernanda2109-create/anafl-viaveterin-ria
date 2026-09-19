@@ -1,0 +1,1120 @@
+/* =========================================
+   TOKENS
+   Base: 1rem = 16px (padrão do navegador, não sobrescrito no html).
+   Todas as medidas do projeto estão em rem. Tracking (letter-spacing)
+   fica em em de propósito, porque acompanha o tamanho da própria fonte.
+   Linguagem visual traduzida da referência: grotesca de tracking fechado,
+   tijolo e caramelo sobre branco e areia, rodapé espresso.
+   ========================================= */
+:root {
+  /* cor */
+  --cor-branco: #FFFFFF;
+  --cor-areia-clara: #FAF8F3;
+  --cor-areia: #F5F2EB;
+  --cor-areia-media: #EFEADE;
+  --cor-areia-escura: #E6E0D1;
+  --cor-verde: #3F5143;
+  --cor-verde-escuro: #324135;
+  --cor-terracota: #C2703D;
+  --cor-terracota-fundo: #A8562A;   /* terracota escurecida: como area precisa de 4.5:1 com branco */
+  --cor-terracota-clara: #E8B78F;
+  --cor-terracota-texto: #FBEFE6;
+  --cor-verde-texto-suave: #EAEFEA;
+  --cor-texto: #1C2320;
+  --cor-texto-suave: #57625A;
+  --cor-linha: #D6D0C1;
+  --cor-borda-card: #D3CDBC;
+  --cor-rodape: #26302A;
+  --cor-rodape-texto: #F2F4F0;
+  --cor-rodape-suave: #B7C2B9;
+
+  /* véus e transparências (derivados da paleta) */
+  --veu-hero-forte: rgb(31 40 34 / 0.92);
+  --veu-hero-medio: rgb(31 40 34 / 0.55);
+  --veu-hero-nulo: rgb(31 40 34 / 0);
+  --veu-escuro-forte: rgb(28 35 32 / 0.85);
+  --veu-escuro-medio: rgb(28 35 32 / 0.45);
+  --veu-escuro-nulo: rgb(28 35 32 / 0);
+  --veu-branco-forte: rgb(255 255 255 / 0.95);
+  --veu-branco-texto: rgb(255 255 255 / 0.88);
+  --veu-branco-vidro: rgb(255 255 255 / 0.14);
+  --veu-branco-borda: rgb(255 255 255 / 0.38);
+  --veu-branco-nulo: rgb(255 255 255 / 0);
+  --veu-verde-borda: rgb(63 81 67 / 0.55);
+  --veu-rodape-borda: rgb(242 244 240 / 0.14);
+  --fantasma-verde: rgb(63 81 67 / 0.9);
+  --fantasma-verde-fim: rgb(63 81 67 / 0.45);
+  --opaco: #000000; /* só para máscara: a cor não aparece, só a opacidade */
+
+  /* funções */
+  --fundo: var(--cor-areia);
+  --fundo-alt: var(--cor-areia-media);
+  --texto: var(--cor-texto);
+  --texto-suave: var(--cor-texto-suave);
+  --acao: var(--cor-verde);
+  --acao-hover: var(--cor-verde-escuro);
+  --acao-texto: var(--cor-branco);
+
+  /* tipografia: uma grotesca, contraste por peso e tracking */
+  --fonte: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --texto-xs: 0.75rem;
+  --texto-sm: 0.875rem;
+  --texto-base: 1rem;
+  --texto-md: 1.125rem;
+  --texto-lg: 1.375rem;
+  --texto-h3: clamp(1.25rem, 0.8vw + 1.05rem, 1.625rem);
+  --texto-servico: clamp(1.625rem, 2.4vw + 0.95rem, 2.75rem);
+  --texto-subtitulo: clamp(1.375rem, 1.4vw + 1rem, 2.125rem);
+  --texto-h2: clamp(1.875rem, 2.8vw + 1.1rem, 3.25rem);
+  --texto-hero: clamp(2.5rem, 5.4vw + 1rem, 5.5rem);
+  --texto-fantasma: clamp(4.5rem, 19vw, 15rem);
+  --texto-fantasma-hero: clamp(4.5rem, 16.5vw, 14.5rem);
+  --texto-fantasma-bloco: clamp(4.5rem, 13vw, 9.5rem);
+
+  --peso-normal: 400;
+  --peso-medio: 500;
+  --peso-forte: 600;
+  --peso-extra: 700;
+
+  --altura-display: 1;
+  --altura-titulo: 1.1;
+  --altura-corpo: 1.6;
+  --altura-fantasma: 0.82;
+
+  --track-display: -0.05em;
+  --track-titulo: -0.035em;
+  --track-fantasma: -0.065em;
+  --track-caixa: 0.08em;
+
+  --medida: 62ch;
+  --medida-curta: 38ch;
+
+  /* espaço (base 4) */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-6: 1.5rem;
+  --esp-8: 2rem;
+  --esp-12: 3rem;
+  --esp-16: 4rem;
+  --esp-24: 6rem;
+  --secao-y: clamp(4rem, 7vw + 1.5rem, 7.5rem);
+
+  /* container e cabeçalho */
+  --container: 76rem;
+  --container-lista: 54rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --altura-faixa: 2.5rem;
+  --altura-barra: 4rem;
+
+  /* forma */
+  --raio-xs: 0.375rem;
+  --raio-sm: 0.625rem;
+  --raio-md: 1.125rem;
+  --raio-lg: 1.75rem;
+  --raio-estadio: clamp(3rem, 16vw, 16rem);
+  --raio-full: 99rem;
+  --linha: 0.0625rem;
+  --linha-foco: 0.1875rem;
+  --toque: 2.75rem;
+  --icone: 1.125rem;
+  --icone-sm: 0.875rem;
+  --icone-servico: 1.625rem;
+  --icone-faq: 1.375rem;
+  --marca-logo: calc(var(--toque) - var(--esp-1));
+  --barra-menu: 1.375rem;
+  --barra-menu-altura: 0.125rem;
+  --desfoque: 0.875rem;
+
+  --sombra-barra: 0 0.25rem 1.5rem rgb(51 35 30 / 0.1);
+
+  /* movimento */
+  --dur-rapida: 0.3s;
+  --ease-saida: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--altura-barra) + var(--esp-8));
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte);
+  font-size: var(--texto-base);
+  line-height: var(--altura-corpo);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, picture { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+ul, ol { list-style: none; }
+[hidden] { display: none !important; }
+
+h1, h2, h3 {
+  font-weight: var(--peso-medio);
+  line-height: var(--altura-titulo);
+  letter-spacing: var(--track-titulo);
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+strong { font-weight: var(--peso-extra); }
+
+::selection { background-color: var(--acao); color: var(--acao-texto); }
+
+:focus-visible {
+  outline: var(--linha-foco) solid var(--acao);
+  outline-offset: var(--esp-1);
+  border-radius: var(--raio-xs);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   UTILITÁRIOS
+   ========================================= */
+.container {
+  width: min(100% - var(--gutter) * 2, var(--container));
+  margin-inline: auto;
+}
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+.visualmente_oculto {
+  position: absolute;
+  width: var(--linha);
+  height: var(--linha);
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.pular_link {
+  position: absolute;
+  top: var(--esp-2);
+  left: var(--esp-4);
+  z-index: 300;
+  padding: var(--esp-3) var(--esp-4);
+  background-color: var(--acao);
+  color: var(--acao-texto);
+  border-radius: var(--raio-sm);
+  transform: translateY(-300%);
+}
+.pular_link:focus-visible { transform: translateY(0); }
+
+.icone {
+  width: var(--icone);
+  height: var(--icone);
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* logotipos vem em glifo cheio, nao em traco */
+.icone_marca { fill: currentColor; stroke: none; }
+
+/* badge em pílula: ícone pequeno + texto de apoio */
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-1) var(--esp-3);
+  border: var(--linha) solid var(--veu-verde-borda);
+  border-radius: var(--raio-full);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-forte);
+  line-height: var(--altura-corpo);
+  color: var(--cor-terracota);
+}
+.selo .icone { width: var(--icone-sm); height: var(--icone-sm); }
+.selo_pequeno { padding-block: 0; }
+.selo_vidro {
+  background-color: var(--veu-branco-vidro);
+  border-color: var(--veu-branco-borda);
+  color: var(--cor-branco);
+  backdrop-filter: blur(var(--desfoque));
+  -webkit-backdrop-filter: blur(var(--desfoque));
+}
+
+/* botões em pílula: sólido (CTA) e outline (secundário) */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  min-height: var(--toque);
+  padding: var(--esp-3) var(--esp-6);
+  background-color: var(--acao);
+  color: var(--acao-texto);
+  border: var(--linha) solid var(--acao);
+  border-radius: var(--raio-full);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-extra);
+  line-height: var(--altura-titulo);
+  letter-spacing: -0.01em;
+  text-align: center;
+  transition: background-color var(--dur-rapida) ease, color var(--dur-rapida) ease, border-color var(--dur-rapida) ease, transform var(--dur-rapida) var(--ease-saida);
+}
+.botao:hover { background-color: var(--acao-hover); border-color: var(--acao-hover); transform: translateY(calc(var(--esp-1) * -0.5)); }
+.botao:active { transform: translateY(0); }
+.botao_pequeno { padding: var(--esp-2) var(--esp-4); font-size: var(--texto-xs); }
+
+.botao_outline { background-color: transparent; color: var(--acao); }
+.botao_outline:hover { background-color: var(--acao); color: var(--acao-texto); }
+
+.botao_claro { background-color: var(--cor-branco); color: var(--cor-verde); border-color: var(--cor-branco); }
+.botao_claro:hover { background-color: var(--cor-areia); border-color: var(--cor-areia); color: var(--cor-verde-escuro); }
+.botao_claro:focus-visible { outline-color: var(--cor-branco); }
+
+/* tipografia decorativa gigante ("ghost type") */
+.fantasma {
+  display: block;
+  font-size: var(--texto-fantasma);
+  font-weight: var(--peso-medio);
+  line-height: var(--altura-fantasma);
+  letter-spacing: var(--track-fantasma);
+  white-space: nowrap;
+  /* com background-clip: text, o que passa da caixa nao recebe cor e some.
+     O tracking negativo come a ponta da ultima letra e a linha curta corta a
+     cedilha, entao a caixa cresce nos dois lados e a margem devolve o espaco. */
+  padding-right: 0.09em;
+  padding-bottom: 0.34em;
+  margin-right: -0.09em;
+  margin-bottom: -0.34em;
+  color: var(--fantasma-verde);
+  /* paradas em em, e nao em %, para nao mudarem junto com o padding */
+  background-image: linear-gradient(180deg, var(--fantasma-verde) 0.31em, var(--fantasma-verde-fim) 1.12em);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  user-select: none;
+}
+.fantasma_claro {
+  color: var(--veu-branco-forte);
+  background-image: linear-gradient(180deg, var(--veu-branco-forte) 0.2em, var(--veu-branco-nulo) 0.95em);
+}
+
+/* marca: ícone quadrado em gradiente + nome */
+.marca { display: inline-flex; align-items: center; gap: var(--esp-2); min-height: var(--toque); }
+.marca_icone {
+  display: grid;
+  place-items: center;
+  width: calc(var(--toque) - var(--esp-1));
+  height: calc(var(--toque) - var(--esp-1));
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+  border-radius: var(--raio-sm);
+}
+.marca_icone .icone { width: var(--esp-6); height: var(--esp-6); }
+
+/* marca animada: a casa com o cão e o gato substitui a pata no rodapé.
+   A arte tem telhado verde e cão creme, então precisa de ladrilho claro atrás. */
+/* no rodape a marca respira mais que na barra fixa */
+/* no rodapé o ladrilho branco aparece sobre o espresso, então a arte recua;
+   na barra o ladrilho some no branco e a arte pode ocupar quase toda a caixa */
+.rodape_marca .marca_icone_logo { --marca-logo: 3.5rem; --marca-arte: calc(var(--marca-logo) - var(--esp-3)); }
+.marca_icone_logo {
+  width: var(--marca-logo);
+  height: var(--marca-logo);
+  padding: var(--esp-1);
+  background-color: var(--cor-branco);
+  background-image: url("../img/marca-casa.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--marca-arte, calc(var(--marca-logo) - var(--esp-1))) auto;
+  border-radius: var(--raio-md);
+}
+/* o GIF só é baixado quando há permissão para movimento */
+@media (prefers-reduced-motion: no-preference) {
+  .marca_icone_logo { background-image: url("../img/marca-casa.gif"); }
+}
+.marca_texto { display: grid; line-height: var(--altura-titulo); }
+.marca_nome { font-size: var(--texto-sm); font-weight: var(--peso-extra); letter-spacing: -0.02em; }
+.marca_sub { font-size: var(--texto-xs); color: var(--texto-suave); }
+
+/* =========================================
+   CABEÇALHO
+   Faixa de contato + barra branca flutuando sobre o hero
+   ========================================= */
+.cabecalho {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  transition: transform var(--dur-rapida) var(--ease-saida);
+}
+
+.cabecalho_faixa { display: none; }
+
+.cabecalho_barra {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  min-height: var(--altura-barra);
+  margin-top: var(--esp-3);
+  padding: var(--esp-2) var(--esp-2) var(--esp-2) var(--esp-3);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-barra);
+}
+
+.cabecalho_menu_botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--esp-1) * 1.25);
+  width: var(--toque);
+  height: var(--toque);
+  border-radius: var(--raio-sm);
+  background-color: var(--cor-areia);
+}
+.cabecalho_menu_botao span {
+  width: var(--barra-menu);
+  height: var(--barra-menu-altura);
+  background-color: var(--texto);
+  border-radius: var(--raio-full);
+  transition: transform var(--dur-rapida) ease, opacity var(--dur-rapida) ease;
+}
+.cabecalho_menu_botao[aria-expanded="true"] span:nth-child(1) { transform: translateY(calc(var(--esp-1) * 1.25 + var(--barra-menu-altura))) rotate(45deg); }
+.cabecalho_menu_botao[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.cabecalho_menu_botao[aria-expanded="true"] span:nth-child(3) { transform: translateY(calc((var(--esp-1) * 1.25 + var(--barra-menu-altura)) * -1)) rotate(-45deg); }
+
+.cabecalho_nav {
+  position: absolute;
+  top: calc(100% + var(--esp-2));
+  inset-inline: 0;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--esp-3);
+  padding: var(--esp-3);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-barra);
+}
+.cabecalho_nav_aberto { display: flex; }
+
+.cabecalho_links { display: flex; flex-direction: column; }
+.cabecalho_link {
+  display: flex;
+  align-items: center;
+  min-height: var(--toque);
+  padding-inline: var(--esp-3);
+  border-radius: var(--raio-sm);
+  font-size: var(--texto-base);
+  font-weight: var(--peso-forte);
+  transition: background-color var(--dur-rapida) ease, color var(--dur-rapida) ease;
+}
+.cabecalho_link:hover { background-color: var(--cor-areia); color: var(--cor-verde); }
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  min-height: 46rem;
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+}
+
+.hero_fundo { position: absolute; inset: 0; z-index: -1; }
+.hero_fundo picture, .hero_imagem { width: 100%; height: 100%; }
+/* ate 64rem entra a foto vertical: ancorar embaixo mantem gato e cao inteiros */
+.hero_imagem { object-fit: cover; object-position: 50% 100%; }
+.hero_fundo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(175deg, var(--veu-hero-forte) 0%, var(--veu-hero-medio) 55%, var(--veu-hero-nulo) 100%);
+}
+
+.hero_conteudo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--esp-8);
+  padding-block: calc(var(--altura-barra) + var(--esp-16)) var(--esp-8);
+}
+
+.hero_texto { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.hero_selo { margin-bottom: var(--esp-6); }
+.hero_titulo {
+  max-width: 13ch;
+  font-size: var(--texto-hero);
+  line-height: var(--altura-display);
+  letter-spacing: var(--track-display);
+}
+.hero_subtitulo {
+  margin-top: var(--esp-6);
+  max-width: var(--medida-curta);
+  font-size: var(--texto-base);
+  color: var(--veu-branco-texto);
+}
+.hero_acoes { display: flex; flex-wrap: wrap; gap: var(--esp-3); margin-top: var(--esp-8); }
+
+.hero_fantasma {
+  position: absolute;
+  right: calc(var(--esp-2) * -1);
+  bottom: calc(var(--texto-fantasma-hero) * 0.16 + var(--esp-4));
+  font-size: var(--texto-fantasma-hero);
+  /* mesma logica do "duvidas": a base nao chega a transparente, senao le como corte */
+  background-image: linear-gradient(180deg, var(--veu-branco-forte) 0.25em, rgb(255 255 255 / 0.3) 1.12em);
+}
+
+/* =========================================
+   CABEÇAS DE SEÇÃO (centralizadas, como na referência)
+   ========================================= */
+.diferenciais_cabeca,
+.processo_cabeca,
+.sobre_cabeca,
+.faq_cabeca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-4);
+  margin-bottom: var(--esp-12);
+  text-align: center;
+}
+
+.diferenciais_titulo,
+.processo_titulo,
+.sobre_titulo,
+.faq_titulo,
+.agendar_titulo {
+  max-width: 20ch;
+  font-size: var(--texto-h2);
+}
+
+/* =========================================
+   DIFERENCIAIS: cards com borda fina e foto à direita
+   ========================================= */
+.diferenciais { padding-block: var(--secao-y); background-color: var(--fundo); }
+
+.diferenciais_grade { display: grid; gap: var(--esp-3); }
+
+.diferenciais_card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 18rem;
+  padding: var(--esp-6);
+  background-color: var(--cor-branco);
+  border: var(--linha) solid var(--cor-borda-card);
+  border-radius: var(--raio-md);
+  transition: border-color var(--dur-rapida) ease;
+}
+.diferenciais_card:hover { border-color: var(--cor-verde); }
+/* 1: rosto do cao  ·  2: gato sentado inteiro  ·  3: cao deitado, patas e focinho no quadro */
+.diferenciais_grade > li:nth-child(1) { --foco-x: 45%; }
+.diferenciais_grade > li:nth-child(2) { --foco-x: 57%; }
+.diferenciais_grade > li:nth-child(3) { --foco-x: 46%; }
+
+.diferenciais_card picture {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: 40%;
+}
+.diferenciais_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* o corte da coluna estreita e quase todo horizontal: --foco-x aponta o assunto de cada foto */
+  object-position: var(--foco-x, 50%) 50%;
+  /* a rampa so cobre a borda: o texto ja para antes da foto, entao 45% lavava metade da imagem */
+  -webkit-mask-image: linear-gradient(90deg, var(--veu-escuro-nulo) 0%, var(--opaco) 10%);
+  mask-image: linear-gradient(90deg, var(--veu-escuro-nulo) 0%, var(--opaco) 10%);
+}
+
+.diferenciais_card_corpo {
+  display: grid;
+  gap: var(--esp-3);
+  /* largura da coluna de texto: sempre para antes da foto, com folga de pelo menos 16px */
+  max-width: 54%;
+  margin-top: auto;
+}
+.diferenciais_card_titulo { font-size: var(--texto-h3); }
+.diferenciais_card_texto { font-size: var(--texto-sm); color: var(--texto-suave); }
+.diferenciais_card_seta {
+  display: grid;
+  place-items: center;
+  width: calc(var(--toque) * 0.72);
+  height: calc(var(--toque) * 0.72);
+  margin-top: var(--esp-3);
+  border: var(--linha) solid var(--cor-borda-card);
+  border-radius: var(--raio-xs);
+  color: var(--cor-terracota);
+  transition: background-color var(--dur-rapida) ease, color var(--dur-rapida) ease;
+}
+.diferenciais_card_seta .icone { width: var(--icone-sm); height: var(--icone-sm); }
+.diferenciais_card:hover .diferenciais_card_seta { background-color: var(--cor-verde); color: var(--cor-branco); }
+
+/* =========================================
+   SERVIÇOS: palavra gigante, pílulas giradas, lista em linhas finas
+   ========================================= */
+.servicos {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--secao-y);
+  background-color: var(--fundo-alt);
+}
+
+.servicos_topo {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding-top: var(--esp-8);
+  text-align: center;
+}
+.servicos_fantasma { max-width: 100%; }
+
+.servicos_lista {
+  max-width: var(--container-lista);
+  margin: var(--esp-12) auto 0;
+  border-bottom: var(--linha) solid var(--cor-linha);
+}
+
+.servicos_item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-3);
+  padding-block: var(--esp-6);
+  border-top: var(--linha) solid var(--cor-linha);
+}
+
+/* o ícone fica no fluxo, antes da palavra: nada de position absolute,
+   que se prendia ao título quando o GSAP aplicava transform no hover */
+.servicos_corpo {
+  display: grid;
+  gap: var(--esp-2);
+  padding-left: calc(var(--icone-servico) + var(--esp-2));
+}
+.servicos_nome {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--esp-2);
+  margin-left: calc((var(--icone-servico) + var(--esp-2)) * -1);
+  font-size: var(--texto-servico);
+  font-weight: var(--peso-medio);
+  line-height: var(--altura-display);
+  letter-spacing: var(--track-display);
+}
+.servicos_icone {
+  flex-shrink: 0;
+  width: var(--icone-servico);
+  height: var(--icone-servico);
+  margin-top: 0;
+  color: var(--cor-terracota);
+}
+.servicos_resumo { max-width: var(--medida); font-size: var(--texto-sm); color: var(--texto-suave); }
+
+.servicos_botao {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: var(--toque);
+  margin-left: var(--esp-6);
+  padding: var(--esp-2) var(--esp-4);
+  background-color: var(--cor-areia-escura);
+  color: var(--cor-verde);
+  border-radius: var(--raio-full);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-extra);
+  transition: background-color var(--dur-rapida) ease, color var(--dur-rapida) ease;
+}
+.servicos_botao:hover { background-color: var(--cor-verde); color: var(--cor-branco); }
+.servicos_botao .icone { width: var(--icone-sm); height: var(--icone-sm); transition: transform var(--dur-rapida) ease; }
+/* a seta avança no hover: reforça que o link sai da página, para o WhatsApp */
+.servicos_botao:hover .icone { transform: translateX(0.25rem); }
+
+/* =========================================
+   COMO FUNCIONA: dois blocos de imagem com palavra fantasma
+   ========================================= */
+.processo { padding-block: var(--secao-y); background-color: var(--cor-areia-clara); }
+
+.processo_grade { display: grid; gap: var(--esp-3); }
+
+.processo_bloco {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  min-height: 36rem;
+  padding: var(--esp-3);
+  background-color: var(--cor-verde);
+  border-radius: var(--raio-md);
+  color: var(--cor-branco);
+}
+.processo_bloco picture { position: absolute; inset: 0; z-index: -2; }
+.processo_bloco img { width: 100%; height: 100%; object-fit: cover; }
+.processo_bloco::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(0deg, var(--veu-escuro-forte) 0%, var(--veu-escuro-medio) 45%, var(--veu-escuro-nulo) 75%);
+}
+
+.processo_fantasma {
+  position: absolute;
+  top: calc(var(--texto-fantasma-bloco) * 0.12);
+  right: var(--esp-3);
+  font-size: var(--texto-fantasma-bloco);
+}
+
+.processo_legenda {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: var(--esp-4);
+  width: 100%;
+  padding: var(--esp-6);
+  background-color: var(--veu-branco-vidro);
+  border: var(--linha) solid var(--veu-branco-borda);
+  border-radius: calc(var(--raio-md) - var(--esp-1));
+  backdrop-filter: blur(var(--desfoque));
+  -webkit-backdrop-filter: blur(var(--desfoque));
+}
+.processo_bloco_titulo { font-size: var(--texto-h3); }
+
+.processo_passos { display: grid; gap: var(--esp-4); }
+.processo_passo { display: grid; grid-template-columns: auto 1fr; gap: var(--esp-3); align-items: start; }
+.processo_passo p { font-size: var(--texto-sm); color: var(--veu-branco-texto); }
+.processo_passo strong { color: var(--cor-branco); font-weight: var(--peso-extra); }
+.processo_numero {
+  display: grid;
+  place-items: center;
+  width: calc(var(--toque) * 0.75);
+  height: calc(var(--toque) * 0.75);
+  border: var(--linha) solid var(--veu-branco-borda);
+  border-radius: var(--raio-full);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-extra);
+  font-variant-numeric: tabular-nums;
+}
+
+.processo_cta { display: flex; justify-content: center; margin-top: var(--esp-8); }
+
+/* =========================================
+   SOBRE: retrato arredondado com legenda em gradiente
+   ========================================= */
+.sobre { padding-block: var(--secao-y); background-color: var(--cor-terracota-fundo); color: var(--cor-branco); }
+.sobre .selo { color: var(--cor-branco); border-color: var(--veu-branco-borda); }
+.sobre_titulo { color: var(--cor-branco); }
+.sobre :focus-visible { outline-color: var(--cor-branco); }
+.sobre .botao_outline { color: var(--cor-branco); border-color: var(--veu-branco-borda); }
+.sobre .botao_outline:hover { background-color: var(--cor-branco); border-color: var(--cor-branco); color: var(--cor-terracota-fundo); }
+
+.sobre_conteudo { display: grid; gap: var(--esp-8); align-items: center; }
+
+.sobre_retrato {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(100%, 24rem);
+  aspect-ratio: 4 / 5;
+  margin-inline: auto;
+  background-color: var(--cor-areia);
+  border-radius: var(--raio-md);
+}
+.sobre_retrato picture, .sobre_retrato img { width: 100%; height: 100%; }
+.sobre_retrato img { object-fit: cover; }
+
+.sobre_legenda {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: grid;
+  gap: var(--esp-1);
+  padding: var(--esp-16) var(--esp-6) var(--esp-6);
+  background-image: linear-gradient(0deg, var(--veu-escuro-forte) 0%, var(--veu-escuro-medio) 55%, var(--veu-escuro-nulo) 100%);
+  color: var(--cor-branco);
+}
+.sobre_legenda_nome { font-size: var(--texto-lg); font-weight: var(--peso-forte); letter-spacing: var(--track-titulo); line-height: var(--altura-titulo); }
+.sobre_legenda_cargo { font-size: var(--texto-xs); font-weight: var(--peso-forte); letter-spacing: var(--track-caixa); text-transform: uppercase; color: var(--veu-branco-texto); }
+
+.sobre_texto { display: flex; flex-direction: column; align-items: flex-start; gap: var(--esp-6); }
+.sobre_paragrafo { max-width: var(--medida); color: var(--cor-terracota-texto); }
+.sobre_paragrafo_destaque { font-size: var(--texto-subtitulo); font-weight: var(--peso-medio); line-height: var(--altura-titulo); letter-spacing: var(--track-titulo); color: var(--cor-branco); }
+
+.sobre_credenciais { display: grid; gap: var(--esp-3); }
+.sobre_credencial { display: flex; align-items: flex-start; gap: var(--esp-3); font-size: var(--texto-sm); }
+.sobre_credencial .icone { margin-top: calc(var(--esp-1) * 0.5); color: var(--cor-terracota-texto); }
+.sobre_credencial strong { display: block; font-size: var(--texto-xs); letter-spacing: var(--track-caixa); text-transform: uppercase; color: var(--cor-branco); }
+
+/* =========================================
+   FAQ: dentro do container "estádio"
+   ========================================= */
+.faq { padding-block: var(--esp-8) var(--secao-y); background-color: var(--fundo); }
+
+.faq_estadio {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(100% - var(--esp-4), 84rem);
+  margin-inline: auto;
+  padding-block: var(--esp-16) calc(var(--texto-fantasma) * 1.2);
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+  border-radius: var(--raio-estadio) var(--raio-estadio) var(--raio-lg) var(--raio-lg);
+}
+
+.faq_estadio .selo { color: var(--cor-branco); border-color: var(--veu-branco-borda); }
+.faq_titulo { color: var(--cor-branco); }
+.faq_estadio :focus-visible { outline-color: var(--cor-branco); }
+
+.faq_lista { display: grid; gap: var(--esp-3); max-width: var(--container-lista); margin-inline: auto; }
+
+.faq_item {
+  border: var(--linha) solid var(--veu-branco-borda);
+  border-radius: var(--raio-md);
+  transition: background-color var(--dur-rapida) ease, border-color var(--dur-rapida) ease;
+}
+.faq_item[open] { background-color: var(--veu-branco-vidro); border-color: var(--veu-branco-forte); }
+
+.faq_pergunta {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  min-height: var(--toque);
+  padding: var(--esp-4) var(--esp-4) var(--esp-4) var(--esp-6);
+  font-weight: var(--peso-forte);
+  line-height: var(--altura-titulo);
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  list-style: none;
+}
+.faq_pergunta::-webkit-details-marker { display: none; }
+.faq_pergunta:hover { color: var(--cor-terracota-clara); }
+.faq_marca { width: var(--icone-faq); height: var(--icone-faq); color: var(--cor-terracota-clara); }
+.faq_pergunta_texto { flex: 1; }
+
+.faq_icone {
+  position: relative;
+  flex-shrink: 0;
+  width: var(--toque);
+  height: var(--toque);
+  border: var(--linha) solid var(--veu-branco-borda);
+  border-radius: var(--raio-full);
+  transition: transform var(--dur-rapida) var(--ease-saida), background-color var(--dur-rapida) ease;
+}
+.faq_icone::before,
+.faq_icone::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--esp-4);
+  height: var(--barra-menu-altura);
+  background-color: var(--cor-branco);
+  border-radius: var(--raio-full);
+  transform: translate(-50%, -50%);
+}
+.faq_icone::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq_item[open] .faq_icone { transform: rotate(45deg); background-color: var(--veu-branco-vidro); }
+
+.faq_resposta { overflow: hidden; }
+.faq_resposta p {
+  max-width: var(--medida);
+  padding: 0 var(--esp-6) var(--esp-6) calc(var(--esp-6) + var(--icone-faq) + var(--esp-3));
+  font-size: var(--texto-sm);
+  color: var(--cor-verde-texto-suave);
+}
+
+.faq_fantasma {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--texto-fantasma) * 0.28);
+  z-index: -1;
+  transform: translateX(-50%);
+  /* a base das letras nao pode chegar a transparente: e o que parecia corte */
+  background-image: linear-gradient(180deg, var(--veu-branco-forte) 0.25em, rgb(255 255 255 / 0.3) 1.12em);
+}
+
+/* =========================================
+   CTA FINAL: foto do pet + palavra fantasma + convite
+   ========================================= */
+.agendar { overflow: hidden; padding-top: var(--secao-y); background-color: var(--cor-areia-clara); }
+
+.agendar_conteudo { display: grid; gap: var(--esp-8); align-items: end; }
+
+.agendar_texto {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--esp-6);
+  /* respiro para a palavra fantasma ficar acima do titulo, e nao atras dele */
+  padding-top: calc(var(--texto-fantasma) * 0.62);
+}
+.agendar_fantasma {
+  position: absolute;
+  top: calc(var(--texto-fantasma) * -0.22);
+  right: 0;
+  z-index: -1;
+  /* sobre fundo claro o verde e que se le: o branco do fantasma_claro some */
+  /* mais fraca que as outras: a base da palavra encosta no titulo */
+  background-image: linear-gradient(180deg, rgb(63 81 67 / 0.55) 0.28em, rgb(63 81 67 / 0.14) 1em);
+}
+.agendar_paragrafo { max-width: var(--medida-curta); font-size: var(--texto-md); color: var(--texto-suave); }
+.agendar_registro { font-size: var(--texto-xs); font-weight: var(--peso-forte); color: var(--texto-suave); }
+
+.agendar_foto {
+  order: 2;
+  width: min(100%, 26rem);
+  aspect-ratio: 4 / 4.6;
+  overflow: hidden;
+  border-radius: var(--raio-lg) var(--raio-lg) 0 0;
+  background-color: var(--cor-areia-escura);
+}
+.agendar_foto img { width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================
+   RODAPÉ ESPRESSO
+   ========================================= */
+.rodape {
+  padding-block: var(--esp-16) var(--esp-8);
+  background-color: var(--cor-rodape);
+  color: var(--cor-rodape-texto);
+}
+.rodape :focus-visible { outline-color: var(--cor-branco); }
+
+.rodape_topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-6);
+  padding-bottom: var(--esp-8);
+  border-bottom: var(--linha) solid var(--veu-rodape-borda);
+}
+.rodape .marca_sub { color: var(--cor-rodape-suave); }
+.rodape_frase {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-2);
+  font-size: var(--texto-lg);
+  font-weight: var(--peso-medio);
+  letter-spacing: var(--track-titulo);
+}
+
+.rodape_grade { display: grid; gap: var(--esp-8); padding-block: var(--esp-8); }
+.rodape_coluna { display: flex; flex-direction: column; align-items: flex-start; gap: var(--esp-4); }
+.rodape_titulo {
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-extra);
+  letter-spacing: var(--track-caixa);
+  text-transform: uppercase;
+  color: var(--cor-rodape-suave);
+}
+.rodape_texto { max-width: var(--medida-curta); font-size: var(--texto-sm); color: var(--cor-rodape-suave); }
+.rodape_lista { display: grid; gap: var(--esp-1); font-size: var(--texto-sm); color: var(--cor-rodape-suave); }
+.rodape_rotulo { font-weight: var(--peso-forte); color: var(--cor-rodape-texto); }
+.rodape_link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  min-height: var(--toque);
+  transition: color var(--dur-rapida) ease;
+}
+.rodape_link:hover { color: var(--cor-branco); }
+/* contatos: ícone dentro de um círculo de contorno, um por linha */
+.rodape_contatos { display: grid; gap: var(--esp-2); width: 100%; }
+/* grade de duas colunas, nao flex: o icone nunca cai para cima do rotulo,
+   e minmax(0, 1fr) faz o texto quebrar dentro da propria coluna */
+.rodape_contato {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--esp-3);
+  min-height: var(--toque);
+  font-size: var(--texto-md);
+  font-weight: var(--peso-forte);
+  color: var(--cor-rodape-texto);
+  transition: color var(--dur-rapida) ease;
+}
+.rodape_contato_texto { min-width: 0; }
+.rodape_contato_marca {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: calc(var(--toque) * 0.8);
+  height: calc(var(--toque) * 0.8);
+  border: var(--linha) solid var(--veu-rodape-borda);
+  border-radius: var(--raio-full);
+  color: var(--cor-terracota-clara);
+  transition: border-color var(--dur-rapida) ease, background-color var(--dur-rapida) ease;
+}
+.rodape_contato:hover { color: var(--cor-branco); }
+.rodape_contato:hover .rodape_contato_marca { border-color: var(--cor-terracota-clara); background-color: var(--veu-rodape-borda); }
+
+/* cidade e registro saem da lista: são dado, não ação */
+.rodape_contato_nota { font-size: var(--texto-sm); color: var(--cor-rodape-suave); }
+
+.rodape_base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--esp-2) var(--esp-6);
+  padding-top: var(--esp-6);
+  border-top: var(--linha) solid var(--veu-rodape-borda);
+  font-size: var(--texto-xs);
+  color: var(--cor-rodape-suave);
+}
+/* a assinatura ocupa a linha inteira, abaixo dos dois textos legais */
+.rodape_credito { flex-basis: 100%; padding-top: var(--esp-2); }
+.rodape_credito_link { font-weight: var(--peso-forte); color: var(--cor-rodape-texto); text-decoration: underline; text-underline-offset: 0.2em; }
+.rodape_credito_link:hover { color: var(--cor-branco); }
+
+/* =========================================
+   ANIMAÇÃO (suporte da biblioteca-animacoes)
+   .anim só existe com GSAP carregado e sem prefers-reduced-motion.
+   ========================================= */
+.anim [data-anim="texto"] { visibility: hidden; }
+.anim_linha { display: block; overflow: hidden; padding-bottom: 0.08em; }
+.anim_linha_interna { display: block; will-change: transform; }
+[data-anim="parallax"] { will-change: transform; }
+
+/* =========================================
+   TABLET · 48rem (768px)
+   ========================================= */
+@media (min-width: 48rem) {
+  .hero { min-height: 48rem; }
+
+  .diferenciais_grade { grid-template-columns: repeat(2, 1fr); }
+  .diferenciais_card_largo { grid-column: 1 / -1; min-height: 17rem; }
+  .diferenciais_card_largo picture { width: 48%; }
+  .diferenciais_card_largo .diferenciais_card_corpo { max-width: 50%; }
+  .diferenciais_card:not(.diferenciais_card_largo) picture { width: 40%; }
+  .diferenciais_card:not(.diferenciais_card_largo) .diferenciais_card_corpo { max-width: 56%; }
+
+  .servicos_item { grid-template-columns: 1fr auto; column-gap: var(--esp-8); align-items: center; }
+  /* os rótulos têm larguras diferentes: alinhados à direita, formam uma borda única na lista */
+  .servicos_botao { grid-column: 2; grid-row: 1; justify-self: end; margin-left: 0; }
+
+  .processo_grade { grid-template-columns: repeat(2, 1fr); }
+  .processo_bloco { min-height: 40rem; }
+
+
+  .rodape_grade { grid-template-columns: repeat(2, 1fr); }
+  .rodape_coluna:first-child { grid-column: 1 / -1; }
+}
+
+/* =========================================
+   DESKTOP · 64rem (1024px)
+   ========================================= */
+@media (min-width: 64rem) {
+  .cabecalho_faixa { display: block; color: var(--cor-branco); }
+  .cabecalho_faixa_conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--esp-8);
+    min-height: var(--altura-faixa);
+    font-size: var(--texto-xs);
+    font-weight: var(--peso-forte);
+  }
+  .cabecalho_faixa_item { display: inline-flex; align-items: center; gap: var(--esp-2); }
+  .cabecalho_faixa_item .icone { width: var(--icone-sm); height: var(--icone-sm); }
+  .cabecalho_faixa a.cabecalho_faixa_item { min-height: var(--toque); }
+  .cabecalho_faixa :focus-visible { outline-color: var(--cor-branco); }
+  .cabecalho_barra { margin-top: 0; }
+  .cabecalho_rolado { transform: translateY(calc(var(--altura-faixa) * -1 + var(--esp-3) * -1 + var(--esp-3))); }
+
+  .cabecalho_menu_botao { display: none; }
+  .cabecalho_nav {
+    position: static;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--esp-4);
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .cabecalho_links { flex-direction: row; gap: var(--esp-1); margin-inline: auto; }
+  .cabecalho_link { padding-inline: var(--esp-3); font-size: var(--texto-sm); }
+
+  .hero { min-height: 52rem; }
+  /* a partir de 64rem entra a foto larga: os bichos ficam a direita, o vazio verde fica sob o texto */
+  .hero_imagem { object-position: 100% 50%; }
+  .hero_fundo::after {
+    background-image:
+      linear-gradient(90deg, var(--veu-hero-forte) 0%, var(--veu-hero-medio) 42%, var(--veu-hero-nulo) 70%),
+      linear-gradient(0deg, var(--veu-hero-medio) 0%, var(--veu-hero-nulo) 35%);
+  }
+  .hero_conteudo { padding-top: calc(var(--altura-faixa) + var(--altura-barra) + var(--esp-16)); }
+  .hero_subtitulo { font-size: var(--texto-md); }
+
+  .diferenciais_card { min-height: 18rem; }
+  /* nas duas colunas estreitas o card tem 336px: a foto encolhe para o texto nao entrar nela */
+  .diferenciais_card:not(.diferenciais_card_largo) picture { width: 34%; }
+  .diferenciais_card:not(.diferenciais_card_largo) .diferenciais_card_corpo { max-width: 56%; }
+
+  .processo_bloco { min-height: 44rem; padding: var(--esp-4); }
+
+  .sobre_conteudo { grid-template-columns: 5fr 6fr; gap: var(--esp-16); }
+  .sobre_retrato { width: 100%; max-width: 28rem; margin-inline: auto 0; }
+
+
+  .faq_estadio { padding-top: var(--esp-24); }
+
+  .agendar_conteudo { grid-template-columns: 5fr 6fr; gap: var(--esp-16); }
+  .agendar_foto { order: 0; width: 100%; }
+  .agendar_texto { padding-bottom: var(--secao-y); }
+
+  .rodape_grade { grid-template-columns: 1.3fr 1fr 1fr; }
+  .rodape_coluna:first-child { grid-column: auto; }
+}
+
+/* =========================================
+   TELAS GRANDES · 90rem (1440px)
+   ========================================= */
+/* =========================================
+   DESKTOP LARGO · 72rem (1152px)
+   ========================================= */
+@media (min-width: 72rem) {
+  /* tres colunas so a partir de 1152px: abaixo disso o card fica com 255px
+     e a coluna de texto cai para 124px, estreita demais para o paragrafo */
+  .diferenciais_grade { grid-template-columns: 1.55fr 1fr 1fr; }
+  .diferenciais_card_largo { grid-column: auto; }
+}
+
+@media (min-width: 90rem) {
+  .hero { min-height: 56rem; }}
