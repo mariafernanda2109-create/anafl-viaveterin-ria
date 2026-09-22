@@ -34,7 +34,7 @@ Linguagem traduzida da referência "Happy Tails Pet Care & Veterinary" (estrutur
 
 ## Pendências antes de publicar
 
-1. **Resolução do retrato.** `sobre-ana-flavia` já é a foto real da Ana Flávia, mas o original enviado tem 512x519, e o recorte 4:5 ficou em 415x519. A moldura chega a 448x560 no desktop, então a imagem é usada com 1,08x de ampliação e fica visivelmente macia em tela retina. Pedir o arquivo original da câmera e reexportar em 896x1120
+1. **Retrato.** `sobre-ana-flavia` é a foto real da Ana Flávia, recortada em 4:5 a partir do original de 1024x1038 (830x1038, 1,85x a moldura de 448x560 do desktop)
 2. **Testar o link no celular.** O número é `+55 43 99681-1409`, confirmado pela cliente em 18/09/2026 (antes estava sem o nono dígito). Abrir o site publicado e conferir se o WhatsApp encontra o contato
 3. **Domínio próprio.** Hoje o site usa o subdomínio da Vercel, `anaflaviavet.vercel.app`, já refletido em `canonical`, `og:url`, `og:image` e no JSON-LD. Se a cliente registrar um domínio, trocar nesses cinco pontos e apontar o DNS na Vercel
 4. **Nome completo e ano de formação.** A página usa "Ana Flávia" e "Medicina Veterinária - UEL". Acrescentar sobrenome e ano de conclusão, se ela quiser
