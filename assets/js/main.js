@@ -63,7 +63,31 @@ if (cabecalho) {
 }
 
 /* =========================================
-   4. Animações GSAP
+   4. CTA fixo no mobile
+   Aparece quando o hero sai da tela e some de novo sobre o CTA final,
+   para não haver dois botões iguais na mesma dobra.
+   ========================================= */
+const ctaFixo = document.querySelector('.cta_fixo');
+if (ctaFixo && 'IntersectionObserver' in window) {
+  const hero = document.querySelector('.hero');
+  const fechamento = document.querySelector('#agendar');
+  const fora = new Set();
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) fora.delete(entrada.target);
+      else fora.add(entrada.target);
+    });
+    // só mostra se o hero E o CTA final estiverem os dois fora de vista
+    const mostrar = fora.has(hero) && fora.has(fechamento);
+    ctaFixo.classList.toggle('cta_fixo_visivel', mostrar);
+  });
+
+  [hero, fechamento].forEach((alvo) => { if (alvo) observador.observe(alvo); });
+}
+
+/* =========================================
+   5. Animações GSAP
    Funções da biblioteca-animacoes (nomes mantidos, parâmetros
    adaptados às classes snake_case). Com prefers-reduced-motion,
    cada função sai cedo e o conteúdo fica no estado final.

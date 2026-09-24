@@ -1006,6 +1006,90 @@ strong { font-weight: var(--peso-extra); }
 .rodape_credito_link:hover { color: var(--cor-branco); }
 
 /* =========================================
+   PÁGINA 404
+   ========================================= */
+.erro_corpo { background-color: var(--cor-verde); }
+.erro {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding-block: var(--esp-16);
+  color: var(--cor-branco);
+}
+.erro_conteudo { display: flex; flex-direction: column; align-items: flex-start; max-width: var(--medida); }
+.erro_marca {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: var(--esp-8);
+  padding: var(--esp-3);
+  background-color: var(--cor-branco);
+  background-image: url("../img/marca-casa.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: calc(3.5rem - var(--esp-6)) auto;
+  border-radius: var(--raio-md);
+}
+.erro_codigo {
+  margin-bottom: var(--esp-3);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-extra);
+  letter-spacing: var(--track-caixa);
+  text-transform: uppercase;
+  color: var(--cor-terracota-clara);
+}
+.erro_titulo {
+  margin-bottom: var(--esp-4);
+  font-size: var(--texto-h2);
+  font-weight: var(--peso-medio);
+  line-height: var(--altura-display);
+  letter-spacing: var(--track-display);
+}
+.erro_texto { margin-bottom: var(--esp-8); color: var(--cor-verde-texto-suave); }
+.erro_acoes { display: flex; flex-wrap: wrap; gap: var(--esp-3); }
+.erro .botao_outline { color: var(--cor-branco); border-color: var(--veu-branco-borda); }
+.erro .botao_outline:hover { background-color: var(--cor-branco); color: var(--cor-verde); border-color: var(--cor-branco); }
+.erro :focus-visible { outline-color: var(--cor-branco); }
+.erro_registro { margin-top: var(--esp-12); font-size: var(--texto-xs); font-weight: var(--peso-forte); color: var(--cor-verde-texto-suave); }
+
+/* =========================================
+   CTA FIXO NO MOBILE
+   Só existe abaixo de 48rem, onde o botão do cabeçalho fica
+   dentro do menu sanduíche e some da vista.
+   ========================================= */
+.cta_fixo { display: none; }
+
+@media (max-width: 47.99rem) {
+  .cta_fixo {
+    position: fixed;
+    z-index: 90;
+    right: var(--esp-4);
+    bottom: calc(var(--esp-4) + env(safe-area-inset-bottom));
+    left: var(--esp-4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--esp-2);
+    min-height: var(--toque);
+    padding: var(--esp-3) var(--esp-4);
+    background-color: var(--acao);
+    color: var(--acao-texto);
+    border-radius: var(--raio-full);
+    box-shadow: var(--sombra-barra);
+    font-size: var(--texto-xs);
+    font-weight: var(--peso-extra);
+    /* fora da tela e inerte até o hero sair de vista */
+    transform: translateY(calc(100% + var(--esp-8)));
+    visibility: hidden;
+    transition: transform var(--dur-rapida) var(--ease-saida), visibility var(--dur-rapida);
+  }
+  .cta_fixo_visivel { transform: translateY(0); visibility: visible; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta_fixo { transition: none; }
+}
+
+/* =========================================
    ANIMAÇÃO (suporte da biblioteca-animacoes)
    .anim só existe com GSAP carregado e sem prefers-reduced-motion.
    ========================================= */

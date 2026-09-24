@@ -13,13 +13,24 @@ Landing page one-page de atendimento veterinário domiciliar para cães e gatos 
 
 ```
 index.html
+404.html            página de erro, servida pela Vercel em rota inexistente
 assets/css/style.css
 assets/js/main.js
 assets/img/
-robots.txt
+robots.txt          aponta o sitemap
+sitemap.xml
+vercel.json         cabeçalhos de segurança
+.gitattributes
 .gitignore
 README.md
 ```
+
+## Segurança e SEO
+
+- `vercel.json` aplica `Content-Security-Policy`, `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` e `Permissions-Policy` em todas as rotas. A CSP libera só cdnjs (GSAP) e Google Fonts; se entrar qualquer script novo, precisa ser liberado ali
+- Os dois scripts do GSAP têm `integrity` SHA-384: se o cdnjs servir arquivo diferente, o navegador recusa
+- Ícones: `favicon.svg` e `favicon.ico` trazem a casa simplificada, que é o que se lê em 16px; `apple-touch-icon.png` traz o logotipo inteiro em 180x180
+- Falta instalar analytics e verificar o site no Google Search Console
 
 ## Sistema visual
 
