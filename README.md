@@ -30,7 +30,9 @@ README.md
 - `vercel.json` aplica `Content-Security-Policy`, `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options` e `Permissions-Policy` em todas as rotas. A CSP libera só cdnjs (GSAP) e Google Fonts; se entrar qualquer script novo, precisa ser liberado ali
 - Os dois scripts do GSAP têm `integrity` SHA-384: se o cdnjs servir arquivo diferente, o navegador recusa
 - Ícones: `favicon.svg` e `favicon.ico` trazem a casa simplificada, que é o que se lê em 16px; `apple-touch-icon.png` traz o logotipo inteiro em 180x180
-- Falta instalar analytics e verificar o site no Google Search Console
+- Vercel Web Analytics via `/_vercel/insights/script.js` nas duas páginas. É servido pelo próprio domínio, então a CSP `'self'` já cobre; não usa cookie, e por isso o site segue sem banner e sem obrigação de política de privacidade
+- Precisa estar ligado no painel: projeto → Analytics → Enable. Enquanto não estiver, o script responde 404 e nada é contado
+- Falta verificar o site no Google Search Console
 
 ## Sistema visual
 
