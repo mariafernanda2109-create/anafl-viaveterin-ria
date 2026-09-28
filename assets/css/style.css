@@ -1006,6 +1006,56 @@ strong { font-weight: var(--peso-extra); }
 .rodape_credito_link:hover { color: var(--cor-branco); }
 
 /* =========================================
+   PÁGINAS DE TEXTO (privacidade)
+   ========================================= */
+/* mesma largura da coluna de texto: a marca alinha com o título */
+.legal_topo { padding-block: var(--esp-8) 0; }
+.legal_topo .container { max-width: var(--medida); }
+.legal { padding-block: var(--esp-12) var(--secao-y); }
+.legal_conteudo { max-width: var(--medida); }
+.legal_titulo {
+  font-size: var(--texto-h2);
+  font-weight: var(--peso-medio);
+  line-height: var(--altura-display);
+  letter-spacing: var(--track-display);
+}
+.legal_data {
+  margin-top: var(--esp-3);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-forte);
+  letter-spacing: var(--track-caixa);
+  text-transform: uppercase;
+  color: var(--cor-terracota-fundo);
+}
+.legal_resumo {
+  margin-top: var(--esp-8);
+  font-size: var(--texto-subtitulo);
+  font-weight: var(--peso-medio);
+  line-height: var(--altura-titulo);
+  letter-spacing: var(--track-titulo);
+}
+.legal_secao {
+  margin-top: var(--esp-12);
+  margin-bottom: var(--esp-3);
+  font-size: var(--texto-h3);
+  font-weight: var(--peso-forte);
+  line-height: var(--altura-titulo);
+}
+.legal p { color: var(--texto-suave); }
+.legal_resumo { color: var(--texto); }
+.legal_lista { display: grid; gap: var(--esp-2); margin-top: var(--esp-3); padding-left: var(--esp-6); list-style: disc; }
+.legal_lista li { color: var(--texto-suave); }
+.legal_lista li::marker { color: var(--cor-terracota); }
+.legal_acoes { display: flex; flex-wrap: wrap; gap: var(--esp-3); margin-top: var(--esp-12); }
+.legal_registro {
+  margin-top: var(--esp-12);
+  padding-top: var(--esp-6);
+  border-top: var(--linha) solid var(--cor-linha);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-forte);
+}
+
+/* =========================================
    PÁGINA 404
    ========================================= */
 .erro_corpo { background-color: var(--cor-verde); }

@@ -14,12 +14,13 @@ Landing page one-page de atendimento veterinário domiciliar para cães e gatos 
 ```
 index.html
 404.html            página de erro, servida pela Vercel em rota inexistente
+privacidade.html    servida em /privacidade, por causa do cleanUrls
 assets/css/style.css
 assets/js/main.js
 assets/img/
 robots.txt          aponta o sitemap
 sitemap.xml
-vercel.json         cabeçalhos de segurança
+vercel.json         cabeçalhos de segurança e cleanUrls
 .gitattributes
 .gitignore
 README.md
@@ -48,6 +49,7 @@ Tudo abaixo já está aplicado e verificado em produção.
 - `sitemap.xml`, o `canonical` e o endereço real são a mesma string, com `https`, sem `www` e com barra final
 - Ícones: `favicon.svg` e `favicon.ico` trazem a casa simplificada, sem os bichos, que é o que se lê em 16px; `apple-touch-icon.png` traz o logotipo inteiro em 180x180
 - CTA fixo no mobile, entre a saída da hero e a chegada do CTA final, para o botão não sumir dentro do menu sanduíche
+- `/privacidade` descreve o tratamento real: sem formulário, sem cookie, analytics agregado, e a menção honesta de que Google Fonts e cdnjs enxergam o IP de quem visita. **Se o site passar a coletar qualquer dado, essa página precisa ser atualizada antes da mudança ir ao ar**
 
 ## O que falta
 
@@ -60,7 +62,7 @@ Tudo abaixo já está aplicado e verificado em produção.
 
 ### Decisões em aberto
 
-5. **Política de privacidade e termos de uso.** Sem formulário, sem cookie e com analytics sem cookie, não há obrigação legal clara. Cuidado com template genérico: a Ana Flávia é profissional de saúde registrada, e o CFMV regula publicidade veterinária. Um texto curto e honesto — "este site não coleta dados" — corresponde à realidade
+5. **Termos de uso.** A política de privacidade já existe em `/privacidade`. Termos de uso continuam de fora: sem cadastro, sem transação e sem conteúdo de usuário, não há relação contratual que eles regulem
 6. **Monitoramento de uptime.** A Vercel avisa se o deploy falhar, não se o site cair depois. Um monitor externo gratuito resolve
 7. **Domínio próprio.** Hoje é o subdomínio da Vercel, já refletido em `canonical`, `og:url`, `og:image` e nos dois JSON-LD. Se a cliente registrar um domínio, trocar nesses cinco pontos e apontar o DNS na Vercel
 
@@ -77,6 +79,7 @@ Registro do que mudou e por quê, para não se repetir a investigação.
 - O botão do CRMV apontava para `crmvpr.org.br`, que não existe no DNS. O conselho paranaense fica em `crmv-pr.org.br` e manda para a busca pública nacional do CFMV, que é o destino usado hoje: `https://app.cfmv.gov.br/paginas/busca`
 - O projeto na Vercel chama `anaflaviavet`, diferente do nome do repositório. O nome do projeto é o que define o domínio
 - Habilitar o Web Analytics no painel só injeta as rotas `/_vercel/insights/*` em deploys feitos **depois**. Se o script responder 404, force um redeploy
+- `cleanUrls: true` foi ligado junto com a página de privacidade, para servir `/privacidade` sem a extensão. Vale para qualquer página nova: use o caminho sem `.html` nos links
 
 ## Créditos das fotos
 
