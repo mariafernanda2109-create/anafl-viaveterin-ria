@@ -55,27 +55,26 @@ Tudo abaixo já está aplicado e verificado em produção.
 
 ### Depende da cliente
 
-1. **Testar o link do WhatsApp num celular.** Único item nunca verificado de ponta a ponta. Os 11 links apontam para `5543996811409`, mas só o aparelho confirma se existe conta nesse número. É o CTA único do site
-2. **Horário de atendimento.** Não informado, então ficou fora da página e do schema. Se houver horário fixo, incluir nos dois — ajuda no resultado local
-3. **Sobrenome e ano de formação.** A página usa "Ana Flávia" e "Medicina Veterinária - UEL". Acrescentar dá mais peso à credencial
-4. **Endereço.** O schema declara só Londrina-PR, sem logradouro. Defensável para atendimento domiciliar, mas se houver endereço comercial vale usar o campo de área de atendimento do schema
+1. **Horário de atendimento.** Não informado, então ficou fora da página e do schema. Se houver horário fixo, incluir nos dois — ajuda no resultado local
+2. **Sobrenome e ano de formação.** A página usa "Ana Flávia" e "Medicina Veterinária - UEL". Acrescentar dá mais peso à credencial
+3. **Endereço.** O schema declara só Londrina-PR, sem logradouro. Defensável para atendimento domiciliar, mas se houver endereço comercial vale usar o campo de área de atendimento do schema
 
 ### Decisões em aberto
 
-5. **Termos de uso.** A política de privacidade já existe em `/privacidade`. Termos de uso continuam de fora: sem cadastro, sem transação e sem conteúdo de usuário, não há relação contratual que eles regulem
-6. **Monitoramento de uptime.** A Vercel avisa se o deploy falhar, não se o site cair depois. Um monitor externo gratuito resolve
-7. **Domínio próprio.** Hoje é o subdomínio da Vercel, já refletido em `canonical`, `og:url`, `og:image` e nos dois JSON-LD. Se a cliente registrar um domínio, trocar nesses cinco pontos e apontar o DNS na Vercel
+4. **Termos de uso.** A política de privacidade já existe em `/privacidade`. Termos de uso continuam de fora: sem cadastro, sem transação e sem conteúdo de usuário, não há relação contratual que eles regulem
+5. **Monitoramento de uptime.** A Vercel avisa se o deploy falhar, não se o site cair depois. Um monitor externo gratuito resolve
+6. **Domínio próprio.** Hoje é o subdomínio da Vercel, já refletido em `canonical`, `og:url`, `og:image` e nos dois JSON-LD. Se a cliente registrar um domínio, trocar nesses cinco pontos e apontar o DNS na Vercel
 
 ### Só acompanhar
 
-8. **Indexação.** Leva de alguns dias a duas semanas. Se depois de uma semana a home ainda constar como não indexada em **Páginas**, no Search Console, vale investigar
+7. **Indexação.** Leva de alguns dias a duas semanas. Se depois de uma semana a home ainda constar como não indexada em **Páginas**, no Search Console, vale investigar
 
 ## Histórico de decisões
 
 Registro do que mudou e por quê, para não se repetir a investigação.
 
 - A seção "Área de atendimento" foi removida a pedido da cliente. A cidade continua no schema, no rodapé e na tarja do cabeçalho. As fotos `area-casa` e `area-pet` saíram em 18/09/2026 e seguem recuperáveis no commit `1d20425`
-- O número do WhatsApp estava sem o nono dígito. Corrigido para `+55 43 99681-1409` em 18/09/2026, confirmado pela cliente
+- O número do WhatsApp estava sem o nono dígito. Corrigido para `+55 43 99681-1409` em 18/09/2026, confirmado pela cliente. Link testado no celular em 29/09/2026: o WhatsApp abre a conversa com a mensagem preenchida
 - O botão do CRMV apontava para `crmvpr.org.br`, que não existe no DNS. O conselho paranaense fica em `crmv-pr.org.br` e manda para a busca pública nacional do CFMV, que é o destino usado hoje: `https://app.cfmv.gov.br/paginas/busca`
 - O projeto na Vercel chama `anaflaviavet`, diferente do nome do repositório. O nome do projeto é o que define o domínio
 - Habilitar o Web Analytics no painel só injeta as rotas `/_vercel/insights/*` em deploys feitos **depois**. Se o script responder 404, force um redeploy
